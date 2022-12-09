@@ -88,7 +88,8 @@
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="72dp"
         android:text="Editar"
-        app:autoSizeTextType="uniform" />
+        app:autoSizeTextType="uniform"
+        app:cornerRadius="20dp"/>
 
     <TextView
         android:id="@+id/textView9"

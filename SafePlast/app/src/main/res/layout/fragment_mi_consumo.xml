@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MiConsumo">
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,7 +17,8 @@
         android:layout_marginTop="225dp"
         android:onClick="registerConsumo"
         android:text="Registrar"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:cornerRadius="20dp"/>
 
     <Button
         android:id="@+id/btnRead"
@@ -27,7 +29,8 @@
         android:layout_marginTop="25dp"
         android:onClick="listarConsumo"
         android:text="Listar"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:cornerRadius="20dp"/>
 
     <Button
         android:id="@+id/btnUpdate"
@@ -38,7 +41,8 @@
         android:layout_marginTop="25dp"
         android:onClick="editConsumo"
         android:text="Modificar"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:cornerRadius="20dp"/>
 
     <Button
         android:id="@+id/btnDelete"
@@ -49,6 +53,7 @@
         android:layout_marginTop="25dp"
         android:onClick="deleteConsumo"
         android:text="Eliminar"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:cornerRadius="20dp"/>
 
 </RelativeLayout>

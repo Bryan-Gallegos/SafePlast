@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, miConsumoFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, informateFragment).commit();
 
         /*BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.MiConsumo);
         badgeDrawable.setVisible(true);
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.MiConsumo:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, miConsumoFragment).commit(); return true;
+                        startActivity(new Intent(MainActivity.this,ConsumoActivity.class));
                     case R.id.Informate:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, informateFragment).commit(); return true;
                     case R.id.MiCuenta:

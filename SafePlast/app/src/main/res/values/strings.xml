@@ -2,4 +2,16 @@
     <string name="app_name">SafePlast</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="categorias_">
+        <item>Plástico</item>
+        <item>Papel y cartón</item>
+        <item>Vidrios</item>
+        <item>Orgánico</item>
+        <item>Tóxico</item>
+    </string-array>
+    <string-array name="presentacion_">
+        <item>Botella</item>
+        <item>Bolsa</item>
+        <item>Recipiente</item>
+    </string-array>
 </resources>

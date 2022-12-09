@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/MiConsumo"
-        android:title="Mi Consumo"
-        android:icon="@drawable/ic_baseline_battery_mi_consumo" />
+
     <item
         android:id="@+id/Informate"
         android:title="Informate"
@@ -13,6 +10,10 @@
         android:id="@+id/MiCuenta"
         android:title="Cuenta"
         android:icon="@drawable/ic_baseline_account_box_mi_cuenta" />
+    <item
+        android:id="@+id/MiConsumo"
+        android:title="Mi Consumo"
+        android:icon="@android:drawable/ic_input_add" />
     <item
         android:id="@+id/Estadisticas"
         android:title="Estadisticas"

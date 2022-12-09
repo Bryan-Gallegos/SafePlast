@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 /**
  * A simple {link Fragment} subclass.
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class RegisterFragment extends Fragment {
+
+
 
     public RegisterFragment() {
         // Required empty public constructor
