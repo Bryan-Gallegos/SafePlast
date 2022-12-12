@@ -2,50 +2,124 @@ package com.example.safeplast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import com.example.safeplast.Room.PlasticoDao;
+import com.example.safeplast.Room.PlasticoDataBase;
+import com.example.safeplast.Room.Plasticos;
 
-public class ConsumoActivity extends AppCompatActivity {
+import java.util.List;
 
-    BottomNavigationView navigationView;
+public class ConsumoActivity extends AppCompatActivity implements AdapterListener {
 
-    RegisterFragment registerFragment = new RegisterFragment();
-    EditFragment editFragment = new EditFragment();
+    EditText txtNombre, txtDescripcion, txtUsuario, txtOrigen, txtUbicacion, txtFotografia;
+    Button btnGuardar, btnActualizar;
+    RecyclerView plasticosRecycler;
+    Spinner conSpinner;
 
-   /* Spinner categoria = findViewById(R.id.categorySpinner);
-    Spinner presentacion = findViewById(R.id.presentationSpinner);
+    private PlasticoDataBase plasticoDataBase;
+    private PlasticoDao plasticoDao;
 
-    ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(this,
-            R.array.categorias_, android.R.layout.simple_spinner_dropdown_item);*/
+    private PlasticoAdapter plasticoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consumo);
-        navigationView = findViewById(R.id.consumo_navigation);
-        getSupportFragmentManager().beginTransaction().replace(R.id.consumo_container,registerFragment).commit();
 
-        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        //Room Database
+        plasticoDataBase = PlasticoDataBase.getInstance(this);
+        plasticoDao = plasticoDataBase.getDao();
+        txtNombre = findViewById(R.id.txtNombre);
+        txtNombre = findViewById(R.id.txtNombre);
+        txtDescripcion = findViewById(R.id.txtDescripcion);
+        txtUsuario = findViewById(R.id.txtUsuario);
+        txtOrigen = findViewById(R.id.txtOrigen);
+        txtUbicacion = findViewById(R.id.txtUbicacion);
+        //txtFotografia = findViewById(R.id.txtFotografia);
+        btnGuardar = findViewById(R.id.btnGuardar);
+        plasticosRecycler = findViewById(R.id.plasticosRecycler);
+        //spinner
+        conSpinner = findViewById(R.id.conSpinner);
+        String[] categoriasPresentacion = {"PET","HDPE","PVC","LDPE","PP","PS","Otros"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoriasPresentacion);
+        conSpinner.setAdapter(adapter);
+
+        plasticoAdapter = new PlasticoAdapter(this, this);
+        plasticosRecycler.setAdapter(plasticoAdapter);
+        plasticosRecycler.setLayoutManager(new LinearLayoutManager(this));
+
+        //fetchData();
+
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.NewConsumo:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.consumo_container, registerFragment).commit();
-                    case R.id.EditConsumo:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.consumo_container, editFragment).commit();
-                    case R.id.ListConsumo:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.consumo_container, registerFragment).commit();
-                    case R.id.DeleteConsumo:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.consumo_container, editFragment).commit();
-                }
-                return false;
+            public void onClick(View view) {
+
+                String nombre = txtNombre.getText().toString();
+                String descripcion = txtDescripcion.getText().toString();
+                String usuario = txtUsuario.getText().toString();
+                String origen = txtOrigen.getText().toString();
+                String ubicacion = txtUbicacion.getText().toString();
+                String categoria = conSpinner.getSelectedItem().toString();
+                //String fotografia = txtFotografia.getText().toString();
+
+                Plasticos plasticos = new Plasticos(0,nombre,descripcion,usuario,origen,ubicacion,categoria,"fotografia");
+                plasticoAdapter.addPlastico(plasticos);
+                plasticoDao.insert(plasticos);
+
+                txtNombre.setText("");
+                txtDescripcion.setText("");
+                txtUsuario.setText("");
+                txtOrigen.setText("");
+                txtUbicacion.setText("");
+                conSpinner.setSelection(0);
+                //txtFotografia.setText("");
+
+                Toast.makeText(ConsumoActivity.this, "Inserted", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    private void fetchData(){
+        plasticoAdapter.clearData();
+        List<Plasticos> plasticosList = plasticoDao.getAllPlasticos();
+        for (int i = 0; i < plasticosList.size(); i++){
+            Plasticos plasticos = plasticosList.get(i);
+            plasticoAdapter.addPlastico(plasticos);
+        }
+    }
+
+    @Override
+    public void OnUpdate(Plasticos plasticos) {
+        Intent intent = new Intent(this,UpdateActivity.class);
+        intent.putExtra("model",plasticos);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void OnDelete(int id, int pos) {
+        plasticoDao.delete(id);
+        plasticoAdapter.removePlastico(pos);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fetchData();
     }
 }
