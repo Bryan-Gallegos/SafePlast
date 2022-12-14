@@ -69,7 +69,7 @@ public class UpdateActivity extends AppCompatActivity {
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Plasticos plasticoModel = new Plasticos(plasticos.getId(),txtNombre.getText().toString(),txtDescripcion.getText().toString(),txtUsuario.getText().toString(),txtOrigen.getText().toString(),txtUbicacion.getText().toString(),conSpinner.getSelectedItem().toString(),"");
+                Plasticos plasticoModel = new Plasticos(plasticos.getId(),txtNombre.getText().toString(),txtDescripcion.getText().toString(),txtUsuario.getText().toString(),txtOrigen.getText().toString(),txtUbicacion.getText().toString(),conSpinner.getSelectedItem().toString(),R.drawable.bryan);
                 plasticoDao.update(plasticoModel);
                 finish();
             }

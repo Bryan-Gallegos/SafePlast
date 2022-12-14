@@ -26,9 +26,9 @@ public class Plasticos implements Serializable {
 
     private String categoria;
 
-    private String fotografia;
+    private int fotografia;
 
-    public Plasticos(int id, String nombre, String descripcion, String usuario, String origen, String ubicacion, String categoria, String fotografia) {
+    public Plasticos(int id, String nombre, String descripcion, String usuario, String origen, String ubicacion, String categoria, int fotografia) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -95,11 +95,11 @@ public class Plasticos implements Serializable {
         this.categoria = categoria;
     }
 
-    public String getFotografia() {
+    public int getFotografia() {
         return fotografia;
     }
 
-    public void setFotografia(String fotografia) {
+    public void setFotografia(int fotografia) {
         this.fotografia = fotografia;
     }
 }

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.safeplast.Room.Plasticos;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -16,7 +17,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements iComunicaInformate {
 
     BottomNavigationView bottomNavigationView;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Estadisticas estadisticasFragment = new Estadisticas();
     Perfil perfilFragment = new Perfil();
     Nosotros nosotrosFragment = new Nosotros();
+    //Variables para Informate
+    DetallePlasticoInformate detallePlasticoInformate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,4 +62,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void enviarPlastico(Plasticos plastico) {
+        detallePlasticoInformate = new DetallePlasticoInformate();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto", plastico);
+        detallePlasticoInformate.setArguments(bundleEnvio);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, detallePlasticoInformate).addToBackStack(null).commit();
+    }
 }
