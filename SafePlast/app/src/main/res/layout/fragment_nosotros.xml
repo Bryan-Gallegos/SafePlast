@@ -29,7 +29,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/fondo_degradado"
+            android:background="@color/green_dark"
             android:orientation="horizontal">
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:text="\n\nMisión:"
-                android:textColor="@color/green_dark"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
@@ -47,12 +47,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:text="\nInformar sobre el impacto de los plasticos en el uso diário en el medio ambiente, mediante este aplicativo." />
         </LinearLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:background="@color/green_normal">>
+            android:background="@color/green_light">>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal"
-            android:background="@drawable/fondo_degradado">
+            android:background="@color/green_dark">
 
             <TextView
                 android:id="@+id/textView7"
@@ -68,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="\n\nVisión:"
-                android:textColor="@color/green_dark"
+                android:textColor="@color/white"
                 android:textSize="15dp"
                 android:layout_marginStart="20dp"/>
 
@@ -77,8 +78,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:text="\nLa aplicación debe llegar a una gran población a nivel mundial y fomentar mayor consiencia." />
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/green_light">>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/textView10"
@@ -92,7 +100,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:background="@drawable/fondo_degradado">>
+            android:background="@color/green_dark">>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ScrollView
@@ -112,9 +120,8 @@
 
                     <ImageView
                         android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="139dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:src="@drawable/jimy" />
 
                     <TextView
@@ -122,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Jimmy Revilla\nCorreo:-----"
+                        android:text="Jimmy Revilla\nCorreo: jrevillat@unsa.edu.pe"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -137,14 +144,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginStart="20dp"
                         android:text="Anyela Mayta\nCorreo:amaytay@unsa.edu.pe"
                         android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="136dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:src="@drawable/anyela" />
                 </LinearLayout>
 
@@ -156,16 +163,14 @@
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="wrap_content"
+                        android:layout_width="143dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:src="@drawable/arnold" />
 
                     <TextView
                         android:id="@+id/textView13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="Arnold Sucasaire\nCorreo:asucasairet@unsa.edu.pe"
                         android:textColor="@color/white" />
                 </LinearLayout>
@@ -180,15 +185,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Alex Olaechea\nCorreo:------"
+                        android:layout_marginStart="20dp"
+                        android:text="Alex Olaechea\nCorreo: aolaechea@unsa.edu.pe"
                         android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/imageView6"
-                        android:layout_width="wrap_content"
+                        android:layout_width="135dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/bryan" />
+                        android:src="@drawable/alex" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -202,7 +207,6 @@
                         android:id="@+id/imageView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:src="@drawable/bryan" />
 
                     <TextView
@@ -210,7 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bryan Gallegos\nCorreo:------"
+                        android:text="Bryan Gallegos\nCorreo: cgallegob@unsa.edu.pe"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -223,16 +227,16 @@
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
                         android:layout_weight="1"
-                        android:text="Jordy Valencia\nCorreo:------"
+                        android:text="Jordy Valencia\nCorreo:jquispejar@unsa.edu.pe"
                         android:textColor="@color/black" />
 
                     <ImageView
                         android:id="@+id/imageView8"
-                        android:layout_width="wrap_content"
+                        android:layout_width="134dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/bryan" />
+                        android:src="@drawable/jordy" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

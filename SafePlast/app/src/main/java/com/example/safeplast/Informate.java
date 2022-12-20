@@ -88,20 +88,31 @@ public class Informate extends Fragment {
             @Override
             public void onClick(View view) {
                 String nombre = listaplasticos.get(recyclerView.getChildAdapterPosition(view)).getNombre();
-                Toast.makeText(getContext(),"Selecciono: "+nombre,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),"Selecciono: "+nombre,Toast.LENGTH_SHORT).show();
                 interfaceComunicaFragments.enviarPlastico(listaplasticos.get(recyclerView.getChildAdapterPosition(view)));
             }
         });
     }
 
-    public void cargarLista() {
-        listaplasticos.add(new Plasticos(1,"ds","sds","1","1","1","sd",R.drawable.bryan));
-        listaplasticos.add(new Plasticos(2,"ds","sds","1","1","1","sd",R.drawable.bryan));
-        listaplasticos.add(new Plasticos(3,"ds","sds","1","1","1","sd",R.drawable.jimy));
-        listaplasticos.add(new Plasticos(4,"ds","sds","1","1","1","sd",R.drawable.bryan));
-        listaplasticos.add(new Plasticos(5,"ds","sds","1","1","1","sd",R.drawable.bryan));
-        listaplasticos.add(new Plasticos(6,"ds","sds","1","1","1","sd",R.drawable.bryan));
-        listaplasticos.add(new Plasticos(7,"ds","sds","1","1","1","sd",R.drawable.bryan));
+    public void cargarLista() { //"PET","HDPE","PVC","LDPE","PP","PS"
+        listaplasticos.add(new Plasticos(1,"PET",
+                "Polímero plástico que se elabora a partir de un proceso de polimeración de ácido tereftálico y monoetilenglicol."
+                ,"1","1","1","sd",R.drawable.pet));
+        listaplasticos.add(new Plasticos(2,"HDPE",
+                "El polietileno de alta densidad es un polímero termoplástico formado por múltiples unidades de etileno.",
+                "1","1","1","sd",R.drawable.hdpe));
+        listaplasticos.add(new Plasticos(3,"PVC",
+                "Es una combinación química de carbono, hidrógeno y cloro. Sus componentes provienen del petróleo bruto (43%) y de la sal (57%). Es el plástico con menos dependencia del petróleo.",
+                "1","1","1","sd",R.drawable.pvc));
+        listaplasticos.add(new Plasticos(4,"LDPE",
+                "Es un polímero termoplástico de la familia de los olefínicos, formado por múltiples unidades de etileno.",
+                "1","1","1","sd",R.drawable.ldpe));
+        listaplasticos.add(new Plasticos(5,"PP",
+                "Se obtiene a partir de la polimerización del propileno, un material que entra en la categoría de los termoplásticos.",
+                "1","1","1","sd",R.drawable.pp));
+        listaplasticos.add(new Plasticos(6,"PS",
+                "Es un polímero termoplástico que se obtiene de la polimerización del estireno. Se trata de un plástico duro y transparente.",
+                "1","1","1","sd",R.drawable.ps));
     }
 
     @Override

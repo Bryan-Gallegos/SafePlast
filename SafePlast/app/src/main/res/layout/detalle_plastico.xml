@@ -17,77 +17,54 @@
             android:background="@color/green_normal"
             android:text="PLASTICO PET"
             android:textColor="@color/white"
-            android:textSize="35dp"/>
+            android:textSize="35dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/green_dark">
 
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="117dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:textColor="@color/white"
                 android:text="El plástico Pet, o polietileno tereftalato-poliéster, es un polímero plástico que se obtiene a partir del etileno y el paraxileno. Puede ser transformado mediante procesos de extrusión, inyección, inyección-soplado y termoformado." />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="153dp"
                 android:layout_height="150dp"
+                android:layout_marginEnd="20dp"
                 android:src="@drawable/bryan"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="82dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editTextTextPersonName4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/BuscaZona"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:background="@color/green_normal"
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:text="Busqueda de Plasticos"
+            android:textSize="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
 
-        <LinearLayout
+        <SearchView
+            android:id="@+id/busquedaPlastico"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"/>
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="153dp"
-                android:layout_height="150dp"
-                android:src="@drawable/bryan" />
-        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDetallePlastico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

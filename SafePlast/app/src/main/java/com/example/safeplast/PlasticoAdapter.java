@@ -1,5 +1,6 @@
 package com.example.safeplast;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +57,7 @@ public class PlasticoAdapter extends  RecyclerView.Adapter<PlasticoAdapter.MyVie
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Plasticos plasticos = plasticosList.get(position);
         holder.nombre.setText(plasticos.getNombre());
         holder.descripcion.setText(plasticos.getDescripcion());

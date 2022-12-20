@@ -6,14 +6,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="3dp"
+    app:cardCornerRadius="20dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="125dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:background="@color/green_normal">
 
         <ImageView
             android:id="@+id/imagen_plastico"
@@ -31,7 +32,9 @@
             android:layout_marginTop="3dp"
             android:layout_marginEnd="104dp"
             android:layout_toEndOf="@+id/imagen_plastico"
-            android:text="NOMBRE" />
+            android:text="NOMBRE"
+            android:textSize="18dp"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/textView18"
@@ -41,7 +44,8 @@
             android:layout_marginStart="33dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/imagen_plastico"
-            android:text="descripcion" />
+            android:text="descripcion"
+            android:textColor="@color/white"/>
 
     </RelativeLayout>
 

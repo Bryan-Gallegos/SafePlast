@@ -18,13 +18,17 @@ import java.util.ArrayList;
 public class AdapterPlasticos extends RecyclerView.Adapter<AdapterPlasticos.ViewHolder> implements View.OnClickListener{
 
     LayoutInflater inflater;
-    ArrayList<Plasticos> model;
+    public ArrayList<Plasticos> model;
+    ArrayList<Plasticos> plasticosBuscados;
+
     //Listener
     private View.OnClickListener listener;
 
     public AdapterPlasticos(Context context, ArrayList<Plasticos> model){
         this.inflater = LayoutInflater.from(context);
         this.model = model;
+        plasticosBuscados = new ArrayList<Plasticos>();
+        plasticosBuscados.addAll(model);
     }
     @NonNull
     @Override
@@ -56,6 +60,24 @@ public class AdapterPlasticos extends RecyclerView.Adapter<AdapterPlasticos.View
         if (listener != null){
             listener.onClick(view);
         }
+    }
+
+    public ArrayList<Plasticos> Filtrado(ArrayList<Plasticos> aux, String s) {
+        int longitud = s.length();
+        if (longitud == 0){
+            plasticosBuscados.clear();
+            return aux;
+        }
+        else{
+            plasticosBuscados.clear();
+            for (Plasticos c: aux){
+                if (c.getNombre().toLowerCase().contains(s.toLowerCase())){
+                    plasticosBuscados.add(c);
+                }
+            }
+        }
+        notifyDataSetChanged();
+        return plasticosBuscados;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
