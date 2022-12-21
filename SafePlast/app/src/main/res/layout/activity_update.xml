@@ -9,7 +9,15 @@
     android:orientation="vertical"
     android:background="@drawable/background_gradient"
     android:padding="20dp">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Gestiona Tu Consumo"
+        android:textSize="36dp"
+        />
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="match_parent"
@@ -89,6 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Actualizar"
+        android:drawableRight="@drawable/ic_baseline_edit_24"
         android:textSize="12sp" />
 
 </LinearLayout>

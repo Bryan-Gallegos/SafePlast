@@ -76,7 +76,7 @@ public class ConsumoActivity extends AppCompatActivity implements AdapterListene
                 String categoria = conSpinner.getSelectedItem().toString();
                 //String fotografia = txtFotografia.getText().toString();
 
-                Plasticos plasticos = new Plasticos(0,nombre,descripcion,usuario,origen,ubicacion,categoria,R.drawable.bryan);
+                Plasticos plasticos = new Plasticos(0,nombre,descripcion,usuario,origen,ubicacion,categoria,R.drawable.ic_baseline_person_24);
                 plasticoAdapter.addPlastico(plasticos);
                 plasticoDao.insert(plasticos);
 
