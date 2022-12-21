@@ -75,8 +75,24 @@ public class ConsumoActivity extends AppCompatActivity implements AdapterListene
                 String ubicacion = txtUbicacion.getText().toString();
                 String categoria = conSpinner.getSelectedItem().toString();
                 //String fotografia = txtFotografia.getText().toString();
-
-                Plasticos plasticos = new Plasticos(0,nombre,descripcion,usuario,origen,ubicacion,categoria,R.drawable.ic_baseline_person_24);
+                int fotografia = R.drawable.ldpe;
+                //"HDPE","PVC","LDPE","PP","PS"
+                if (categoria.equalsIgnoreCase("PET")){
+                    fotografia = R.drawable.pet;
+                }
+                else if (categoria.equalsIgnoreCase("HDPE")){
+                    fotografia = R.drawable.hdpe;
+                }
+                else if (categoria.equalsIgnoreCase("PVC")){
+                    fotografia = R.drawable.pvc;
+                }
+                else if (categoria.equalsIgnoreCase("PP")){
+                    fotografia = R.drawable.pp;
+                }
+                else if (categoria.equalsIgnoreCase("PS")){
+                    fotografia = R.drawable.ps;
+                }
+                Plasticos plasticos = new Plasticos(0,nombre,descripcion,usuario,origen,ubicacion,categoria,fotografia);
                 plasticoAdapter.addPlastico(plasticos);
                 plasticoDao.insert(plasticos);
 
