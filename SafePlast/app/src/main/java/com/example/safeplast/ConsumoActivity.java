@@ -104,7 +104,7 @@ public class ConsumoActivity extends AppCompatActivity implements AdapterListene
                 conSpinner.setSelection(0);
                 //txtFotografia.setText("");
 
-                Toast.makeText(ConsumoActivity.this, "Inserted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ConsumoActivity.this, "Tu consumo se registro correctamente", Toast.LENGTH_SHORT).show();
             }
         });
 

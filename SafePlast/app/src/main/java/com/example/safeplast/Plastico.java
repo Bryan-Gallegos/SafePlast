@@ -38,14 +38,9 @@ public class Plastico {
 
     public static void generarConsumPlasticoBeta(){
         consumo = new ArrayList<Plastico>();
-        //plasticoDataBase = PlasticoDataBase.getInstance(getContext());
-        //plasticoDao = plasticoDataBase.getDao();
         /*int countPet=0,countHdpe=0,countPvc=0,countLdpe=0,countPp=0,countPs=0,countOtros=0;
         listadetodosPlasticos = new ArrayList<Plasticos>();
         listadetodosPlasticos.addAll(plasticoDao.getAllPlasticos());
-        //List<Plasticos> listadetodosPlasticos = plasticoDao.getAllPlasticos();
-        //listadetodosPlasticos.remove(0);
-        //plasticoDao.getAllPlasticos();
         for (Plasticos p: listadetodosPlasticos){
             String categoria = p.getCategoria();
             if(categoria.equalsIgnoreCase("PET"))
@@ -64,13 +59,13 @@ public class Plastico {
                 countOtros++;
 
         }*/
-        consumo.add(new Plastico("PET", 10,"#2ba9ca"));
-        consumo.add(new Plastico("HDPE", 12,"#23afa0"));
-        consumo.add(new Plastico("PVC", 8,"#9ee0a9"));
-        consumo.add(new Plastico("LDPE", 12,"#e5e5bb"));
-        consumo.add(new Plastico("PP", 12,"#0c412e"));
-        consumo.add(new Plastico("PS", 12,"#377057"));
-        consumo.add(new Plastico("O", 12,"#749576"));
+        consumo.add(new Plastico("PET", 8,"#2ba9ca"));
+        consumo.add(new Plastico("HDPE", 8,"#23afa0"));
+        consumo.add(new Plastico("PVC", 12,"#9ee0a9"));
+        consumo.add(new Plastico("LDPE", 8,"#e5e5bb"));
+        consumo.add(new Plastico("PP", 10,"#0c412e"));
+        consumo.add(new Plastico("PS", 8,"#377057"));
+        consumo.add(new Plastico("O", 8,"#749576"));
 
     }
 }
