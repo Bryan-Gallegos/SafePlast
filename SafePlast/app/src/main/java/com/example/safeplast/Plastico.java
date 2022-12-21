@@ -1,13 +1,21 @@
 package com.example.safeplast;
 
+import com.example.safeplast.Room.PlasticoDao;
+import com.example.safeplast.Room.Plasticos;
+import com.example.safeplast.Room.PlasticoDataBase;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Plastico {
     private String nombre;
     private int cantidad;
     private String color;
 
-    public static ArrayList<Plastico> consumo;
+    private static PlasticoDataBase plasticoDataBase;
+    private static PlasticoDao plasticoDao;
+    public static ArrayList<Plasticos> listadetodosPlasticos;
+    public static ArrayList <Plastico> consumo;
 
     Plastico(String n, int cant, String c){
         this.nombre = n;
@@ -29,16 +37,40 @@ public class Plastico {
     }
 
     public static void generarConsumPlasticoBeta(){
-
         consumo = new ArrayList<Plastico>();
+        //plasticoDataBase = PlasticoDataBase.getInstance(getContext());
+        //plasticoDao = plasticoDataBase.getDao();
+        /*int countPet=0,countHdpe=0,countPvc=0,countLdpe=0,countPp=0,countPs=0,countOtros=0;
+        listadetodosPlasticos = new ArrayList<Plasticos>();
+        listadetodosPlasticos.addAll(plasticoDao.getAllPlasticos());
+        //List<Plasticos> listadetodosPlasticos = plasticoDao.getAllPlasticos();
+        //listadetodosPlasticos.remove(0);
+        //plasticoDao.getAllPlasticos();
+        for (Plasticos p: listadetodosPlasticos){
+            String categoria = p.getCategoria();
+            if(categoria.equalsIgnoreCase("PET"))
+                countPet++;
+            if(categoria.equalsIgnoreCase("HDPE"))
+                countHdpe++;
+            if(categoria.equalsIgnoreCase("PVC"))
+                countPvc++;
+            if(categoria.equalsIgnoreCase("LDPE"))
+                countLdpe++;
+            if(categoria.equalsIgnoreCase("PP"))
+                countPp++;
+            if(categoria.equalsIgnoreCase("PS"))
+                countPs++;
+            if(categoria.equalsIgnoreCase("Otros"))
+                countOtros++;
 
-        consumo.add(new Plastico("PET", 72,"#2ba9ca"));
-        consumo.add(new Plastico("HDPE", 37,"#23afa0"));
-        consumo.add(new Plastico("PVC", 17,"#9ee0a9"));
+        }*/
+        consumo.add(new Plastico("PET", 10,"#2ba9ca"));
+        consumo.add(new Plastico("HDPE", 12,"#23afa0"));
+        consumo.add(new Plastico("PVC", 8,"#9ee0a9"));
         consumo.add(new Plastico("LDPE", 12,"#e5e5bb"));
-        consumo.add(new Plastico("PP", 13,"#0c412e"));
-        consumo.add(new Plastico("PS", 13,"#377057"));
-        consumo.add(new Plastico("O", 41,"#749576"));
+        consumo.add(new Plastico("PP", 12,"#0c412e"));
+        consumo.add(new Plastico("PS", 12,"#377057"));
+        consumo.add(new Plastico("O", 12,"#749576"));
 
     }
 }
